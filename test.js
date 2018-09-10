@@ -28,6 +28,7 @@
 
       console.log('Translations:');
       translations.forEach((translation, i) => {
+        fs.writeFileSync('outputText.txt', translation)
         console.log(`${text[i]} => (${target}) ${translation}`);
       });
     })
