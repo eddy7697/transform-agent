@@ -6,18 +6,32 @@
   // Creates a client
   const translate = new Translate();
 
-  console.log(fs.readFileSync('testword.txt', 'utf8'))
+  let text = fs.readFileSync('testword.txt', 'utf8')
+  let target = 'en'
 
-//   // Lists available translation language with their names in English (the default).
-//   translate
-//     .getLanguages()
-//     .then(results => {
-//       const languages = results[0];
+  /**
+   * TODO(developer): Uncomment the following lines before running the sample.
+   */
+  // const text = 'The text to translate, e.g. Hello, world!';
+  // const target = 'The target language, e.g. ru';
 
-//       console.log('Languages:');
-//       languages.forEach(language => console.log(language));
-//     })
-//     .catch(err => {
-//       console.error('ERROR:', err);
-//     });
-//   // [END translate_list_codes]
+  // Translates the text into the target language. "text" can be a string for
+  // translating a single piece of text, or an array of strings for translating
+  // multiple texts.
+  translate
+    .translate(text, target)
+    .then(results => {
+      let translations = results[0];
+      translations = Array.isArray(translations)
+        ? translations
+        : [translations];
+
+      console.log('Translations:');
+      translations.forEach((translation, i) => {
+        console.log(`${text[i]} => (${target}) ${translation}`);
+      });
+    })
+    .catch(err => {
+      console.error('ERROR:', err);
+    });
+  // [END translate_translate_text]
