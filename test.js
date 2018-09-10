@@ -1,30 +1,20 @@
-  // [START translate_detect_language]
+  // [START translate_list_codes]
   // Imports the Google Cloud client library
   const {Translate} = require('@google-cloud/translate');
 
   // Creates a client
   const translate = new Translate();
 
-  /**
-   * TODO(developer): Uncomment the following line before running the sample.
-   */
-  // const text = 'The text for which to detect language, e.g. Hello, world!';
-
-  // Detects the language. "text" can be a string for detecting the language of
-  // a single piece of text, or an array of strings for detecting the languages
-  // of multiple texts.
+  // Lists available translation language with their names in English (the default).
   translate
-    .detect(text)
+    .getLanguages()
     .then(results => {
-      let detections = results[0];
-      detections = Array.isArray(detections) ? detections : [detections];
+      const languages = results[0];
 
-      console.log('Detections:');
-      detections.forEach(detection => {
-        console.log(`${detection.input} => ${detection.language}`);
-      });
+      console.log('Languages:');
+      languages.forEach(language => console.log(language));
     })
     .catch(err => {
       console.error('ERROR:', err);
     });
-  // [END translate_detect_language]
+  // [END translate_list_codes]
