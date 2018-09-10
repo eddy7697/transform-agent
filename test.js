@@ -17,7 +17,7 @@ const fileName = 'tesdoc.pdf'
 // const fileName = 'path/to/document.pdf';
 
 const gcsSourceUri = `gs://${bucketName}/${fileName}`;
-const gcsDestinationUri = `gs://${bucketName}/${fileName}.json`;
+const gcsDestinationUri = `gs://${bucketName}/${fileName}`;
 
 const inputConfig = {
   // Supported mime_types are: 'application/pdf' and 'image/tiff'
