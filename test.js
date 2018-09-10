@@ -6,7 +6,7 @@
   // Creates a client
   const translate = new Translate();
 
-  console.log(fs.readFileSync('testword.txt'))
+  console.log(fs.readFileSync('testword.txt', 'utf8'))
 
 //   // Lists available translation language with their names in English (the default).
 //   translate
