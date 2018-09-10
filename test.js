@@ -6,7 +6,7 @@ const client = new vision.ImageAnnotatorClient();
 
 const bucketName = 'ctci_poc'
 
-const fileName = 'tesdoc.pdf'
+const fileName = 'testword.docx'
 
 /**
  * TODO(developer): Uncomment the following lines before running the sample.

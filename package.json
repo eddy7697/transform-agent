@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@google-cloud/translate": "^2.1.1",
     "@google-cloud/vision": "^0.21.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
